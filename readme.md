@@ -33,3 +33,65 @@ You can use `npm link` to use your development version in your own project:
 - Go to `react-tag-manager` directory and execute command `npm link`
 - Go to your project directory and execute command `npm link react-tag-manager`
 
+## Examples
+Enabling and loading the Google Tag Manager
+```Javascript
+import GTM from 'react-tag-manager'
+
+export const AppContainer = () => (
+  <div>
+    <GTM 
+      gtm={{
+        id: 'GTM-12345',
+        auth: '', // Optional
+        preview: '', // Optional 
+      }} 
+      pageviewEvent={'pageview'} // 'pageview' is default
+      dataLayerName={'dataLayer'} // 'dataLayer' is default
+    />
+
+    ...
+  </div>
+)
+```
+
+### Updating / Adding data to the data layer
+```Javascript
+import DataLayer from 'react-tag-manager/DataLayer'
+
+export const Component = () => (
+  <div>
+    // All props will be added to the data layer
+    <DataLayer 
+      foo={'bar}
+    />
+
+    ...
+  </div>
+)
+```
+
+### Triger a event
+```Javascript
+import React from 'react'
+import api from 'react-tag-manager/api'
+
+export default class extends from React.Component {
+
+  handleButtonClick = () => {
+    api.trigger({
+      event: 'my-button-click',
+      bar: 'foo'
+    })
+  }
+  
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleButtonClick} />
+      </div>
+    )
+  }
+  
+}
+```
