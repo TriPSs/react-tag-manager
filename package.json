@@ -2,6 +2,11 @@
   "name": "react-tag-manager",
   "version": "1.0.0",
   "description": "Google Tag Manager for React",
+  "keywords": [
+    "analytics",
+    "google tag manager",
+    "react"
+  ],
   "homepage": "https://github.com/TriPss/react-gtm#readme",
   "bugs": {
     "url": "https://github.com/TriPSs/gtm/issues"
