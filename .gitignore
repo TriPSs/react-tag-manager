@@ -1,0 +1,17 @@
+*
+
+!__mocks__
+!__mocks__/*
+!types/**/*
+!types
+!.babelrc
+!.editorconfig
+!.eslintrc
+!.flowconfig
+!.gitignore
+!.npmignore
+!package.json
+!package-lock.json
+!readme.md
+!src/**/*
+!src
