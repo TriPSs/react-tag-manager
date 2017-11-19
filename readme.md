@@ -63,7 +63,7 @@ export const Component = () => (
   <div>
     // All props will be added to the data layer
     <DataLayer 
-      foo={'bar}
+      foo={'bar'}
     />
 
     ...
