@@ -1,15 +1,15 @@
 {
   "name": "react-tag-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Google Tag Manager for React",
   "keywords": [
     "analytics",
     "google tag manager",
     "react"
   ],
-  "homepage": "https://github.com/TriPss/react-gtm#readme",
+  "homepage": "https://github.com/TriPss/react-tag-manager#readme",
   "bugs": {
-    "url": "https://github.com/TriPSs/gtm/issues"
+    "url": "https://github.com/TriPSs/react-tag-manager/issues"
   },
   "author": {
     "name": "Tycho Bokdam",
@@ -18,7 +18,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TriPSs/react-gtm.git"
+    "url": "git+https://github.com/TriPSs/react-tag-manager.git"
   },
   "scripts": {
     "build": "NODE_ENV=production babel src -d ./ --copy-files --ignore __tests__/*",
