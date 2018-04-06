@@ -20,7 +20,7 @@ export class GMT extends React.Component {
     ]).isRequired,
 
     gtm: PropTypes.shape({
-      id     : PropTypes.string.isRequired,
+      id     : PropTypes.string,
       auth   : PropTypes.string,
       preview: PropTypes.string,
     }).isRequired,
@@ -29,8 +29,6 @@ export class GMT extends React.Component {
       sendPageView: PropTypes.bool,
       pageView    : PropTypes.object,
     }),
-
-    enabled: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -38,6 +36,7 @@ export class GMT extends React.Component {
     dataLayer    : {},
 
     gtm: {
+      id     : null,
       auth   : null,
       preview: null,
     },
@@ -46,8 +45,6 @@ export class GMT extends React.Component {
       sendPageView: false,
       pageview    : null,
     },
-
-    enabled: true,
   }
 
   api
@@ -59,9 +56,9 @@ export class GMT extends React.Component {
   }
 
   componentDidMount() {
-    const { enabled, gtm, dataLayerName, dataLayer } = this.props
+    const { gtm, dataLayerName, dataLayer } = this.props
 
-    if (enabled && gtm && gtm.id) {
+    if (gtm && gtm.id) {
       this.api.init(dataLayerName)
       this.api.setDataLayer(dataLayer)
 
