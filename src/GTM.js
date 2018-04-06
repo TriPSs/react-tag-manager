@@ -23,7 +23,7 @@ export class GMT extends React.Component {
       id     : PropTypes.string,
       auth   : PropTypes.string,
       preview: PropTypes.string,
-    }).isRequired,
+    }),
 
     settings: PropTypes.shape({
       sendPageView: PropTypes.bool,
