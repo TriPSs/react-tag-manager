@@ -37,6 +37,5 @@ export default (gtm, dataLayerName, loadCallback) => {
   // Check if we can use the dom just to be sure
   if (canUseDom()) {
     loadScript(gtm, dataLayerName, loadCallback)
-    loadNoScript(gtm.id)
   }
 }

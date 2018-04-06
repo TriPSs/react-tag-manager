@@ -29,7 +29,7 @@ export class PageView extends React.Component {
     data : {},
 
     settings: {
-      locationProp: 'pathName',
+      locationProp: 'pathname',
       sendAs      : 'url',
     },
   }
@@ -48,7 +48,13 @@ export class PageView extends React.Component {
   }
 
   sendPageView = () => {
-    const { data: eventData, event, GTM, location, settings } = this.props
+    const {
+      data: eventData,
+      event,
+      GTM,
+      location,
+      settings,
+    } = this.props
 
     let data = {
       ...eventData,

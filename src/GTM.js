@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router'
 
 import Api from './Api'
 
@@ -15,9 +14,9 @@ export class GMT extends React.Component {
     dataLayerName: PropTypes.string,
     dataLayer    : PropTypes.object,
 
-    children: PropTypes.oneOf([
-      PropTypes.element,
-      PropTypes.arrayOf(PropTypes.element),
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
 
     gtm: PropTypes.shape({
@@ -26,10 +25,10 @@ export class GMT extends React.Component {
       preview: PropTypes.string,
     }).isRequired,
 
-    settings: {
-      withPageView: PropTypes.bool,
+    settings: PropTypes.shape({
+      sendPageView: PropTypes.bool,
       pageView    : PropTypes.object,
-    },
+    }),
   }
 
   static defaultProps = {
@@ -42,8 +41,8 @@ export class GMT extends React.Component {
     },
 
     settings: {
-      withPageView: false,
-      pageview    : {},
+      sendPageView: false,
+      pageview    : null,
     },
   }
 
@@ -71,19 +70,21 @@ export class GMT extends React.Component {
   getValue = () => ({ api: this.api })
 
   render() {
-    const { children, settings: { withPageView, pageView } } = this.props
+    const { children, settings: { sendPageView, pageView } } = this.props
 
     return (
       <GtmContext.Provider value={this.getValue()}>
-        {withPageView && (
-          <PageView {...pageView} />
-        )}
+        <React.Fragment>
+          {sendPageView && (
+            <PageView {...pageView} />
+          )}
 
-        {children}
+          {children}
+        </React.Fragment>
       </GtmContext.Provider>
     )
   }
 
 }
 
-export default withRouter(GMT)
+export default GMT

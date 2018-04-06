@@ -3,7 +3,7 @@ import debug from 'debug'
 const warn = debug('gtm:api:warning')
 const log = debug('gtm:api:log')
 
-export default new class Api {
+export default class Api {
 
   dataLayerName
 
