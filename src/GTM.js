@@ -29,6 +29,8 @@ export class GMT extends React.Component {
       sendPageView: PropTypes.bool,
       pageView    : PropTypes.object,
     }),
+
+    enabled: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -44,6 +46,8 @@ export class GMT extends React.Component {
       sendPageView: false,
       pageview    : null,
     },
+
+    enabled: true,
   }
 
   api
@@ -55,9 +59,9 @@ export class GMT extends React.Component {
   }
 
   componentDidMount() {
-    const { gtm, dataLayerName, dataLayer } = this.props
+    const { enabled, gtm, dataLayerName, dataLayer } = this.props
 
-    if (gtm && gtm.id) {
+    if (enabled && gtm && gtm.id) {
       this.api.init(dataLayerName)
       this.api.setDataLayer(dataLayer)
 
