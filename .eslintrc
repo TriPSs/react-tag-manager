@@ -3,13 +3,11 @@
   "extends" : [
     "standard",
     "airbnb",
-    "plugin:flowtype/recommended",
     "plugin:jest/recommended"
   ],
   "plugins": [
     "babel",
     "promise",
-    "flowtype",
     "jest"
   ],
   "env"     : {

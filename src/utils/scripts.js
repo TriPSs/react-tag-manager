@@ -1,3 +1,5 @@
+import { canUseDom } from './helpers'
+
 export const loadScript = ({ id, auth, preview }, dataLayerName, loadCallback) => {
   const script = document.createElement('SCRIPT')
 
@@ -32,6 +34,8 @@ export const loadNoScript = (gtmID) => {
 }
 
 export default (gtm, dataLayerName, loadCallback) => {
-  loadScript(gtm, dataLayerName, loadCallback)
-  // loadNoScript(gtmID)
+  // Check if we can use the dom just to be sure
+  if (canUseDom()) {
+    loadScript(gtm, dataLayerName, loadCallback)
+  }
 }
