@@ -108,7 +108,6 @@ export default class extends from React.Component {
 import React from 'react'
 import { PageView } from 'react-tag-manager'
 
-@withGTM
 export default class extends from React.Component {
 
   render() {
@@ -123,24 +122,23 @@ export default class extends from React.Component {
 }
 ```
 
-### Trigger a event onClick
+### Trigger a onClick event
 ```Javascript
 import React from 'react'
 import { Click } from 'react-tag-manager'
 
-@withGTM
 export default class extends from React.Component {
 
   render() {
     return (
       <div>
       	<Click
-      		event={'click'}
-      		data={{
-      		  event: 'click',
-      		  ...
-      		}}>
-      	  ...
+      	  event={'click'}
+      	  data={{
+      	    event: 'click',
+      		...
+      	  }}>
+      	  <button>CLICK ME</button>
       	</Click>
         ...
       </div>
