@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 
+import { GTMShape } from '../utils/types'
 import withGTM from '../utils/withGTM'
 
 export class PageView extends React.Component {
@@ -17,11 +18,7 @@ export class PageView extends React.Component {
       sendAs      : PropTypes.string,
     }),
 
-    GTM: PropTypes.shape({
-      api: PropTypes.shape({
-        trigger: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
+    GTM: GTMShape.isRequired,
   }
 
   static defaultProps = {

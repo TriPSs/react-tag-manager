@@ -8,7 +8,7 @@ import loadScripts from './utils/scripts'
 
 import PageView from './events/PageView'
 
-export class GMT extends React.Component {
+export class GTM extends React.Component {
 
   static propTypes = {
     dataLayerName: PropTypes.string,
@@ -88,4 +88,4 @@ export class GMT extends React.Component {
 
 }
 
-export default GMT
+export default GTM

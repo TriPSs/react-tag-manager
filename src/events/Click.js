@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { GTMShape } from '../utils/types'
 import withGTM from '../utils/withGTM'
 
 export class Click extends React.Component {
@@ -10,11 +11,7 @@ export class Click extends React.Component {
     event  : PropTypes.string,
     data   : PropTypes.object,
 
-    GTM: PropTypes.shape({
-      api: PropTypes.shape({
-        trigger: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
+    GTM: GTMShape.isRequired,
 
     children: PropTypes.element.isRequired,
   }
