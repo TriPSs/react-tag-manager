@@ -26,12 +26,7 @@ export class Click extends React.Component {
   }
 
   handleOnClick = (e) => {
-    const { data: eventData, event, onClick, GTM } = this.props
-
-    let data = {
-      ...eventData,
-      [settings.sendAs]: location[settings.locationProp],
-    }
+    const { data, event, onClick, GTM } = this.props
 
     if (event && !data.event) {
       data.event = event
