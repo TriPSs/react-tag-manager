@@ -29,18 +29,18 @@ export const AppContainer = () => (
     <GTM 
       gtm={{
         id: 'GTM-12345',
-        auth: '', // Optional
-        preview: '', // Optional 
+        auth: '',      // Optional
+        preview: '',   // Optional 
       }} 
       settings={{
-        sendPageView: true, 	// default false
-        pageView: {		 		// default null
-          event: 'pageview',	// default
-          data : {},			// default
+        sendPageView: true,     // default false
+        pageView: {             // default null
+          event: 'pageview',    // default
+          data : {},            // default
           
           settings: { 
-            locationProp: 'pathname', 	// default
-            sendAs      : 'url',		// default
+            locationProp: 'pathname', // default
+            sendAs      : 'url',      // default
           },
         }
       }}>
@@ -159,9 +159,9 @@ $ npm run build:watch // To recompile files on file change
 ```
 
 ### Using development version in local project
-You can use `npm link` to use your development version in your own project:
-- Go to `react-tag-manager` directory and execute command `npm link`
-- Go to your project directory and execute command `npm link react-tag-manager`
+You can use `npm link` / `yarn link` to use your development version in your own project:
+- Go to `react-tag-manager` directory and execute command `npm link` / `yarn link`
+- Go to your project directory and execute command `npm link react-tag-manager` / `yarn link react-tag-manager`
 
 ## [License](https://github.com/TriPSs/react-tag-manager/blob/master/LICENSE)
 
