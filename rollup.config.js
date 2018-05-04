@@ -1,9 +1,9 @@
-import * as p from 'path'
+import path from 'path'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input   : p.resolve('src/index.js'),
+  input   : path.resolve('src/index.js'),
   output  : [
     { file: 'lib/index.js', format: 'cjs' },
     { file: 'lib/index.es.js', format: 'es' },
@@ -13,6 +13,7 @@ export default {
     'prop-types',
     'debug',
     'react-router',
+    'react-helmet',
   ],
   plugins : [
     resolve({

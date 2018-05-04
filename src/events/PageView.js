@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import { withRouter } from 'react-router'
 
 import { GTMShape } from '../utils/types'
@@ -31,8 +32,10 @@ export class PageView extends React.Component {
     },
   }
 
+  sendPageView = false
+
   componentDidMount() {
-    this.sendPageView()
+    this.sendPageView = true
   }
 
   componentDidUpdate(prevProps) {
@@ -40,11 +43,17 @@ export class PageView extends React.Component {
     const { location: { pathname: oldPathName } } = prevProps
 
     if (newPathName !== oldPathName) {
-      this.sendPageView()
+      this.sendPageView = true
     }
   }
 
-  sendPageView = () => {
+  triggerPageView = () => {
+    if (!this.sendPageView) {
+      return
+    }
+
+    this.sendPageView = false
+
     const {
       data: eventData,
       event,
@@ -66,7 +75,12 @@ export class PageView extends React.Component {
   }
 
   render() {
-    return null
+    /**
+     * We use Helmet's 'onChangeClientState' so we are sure the dom data is updated before sending the PageView
+     */
+    return (
+      <Helmet onChangeClientState={() => this.triggerPageView()} />
+    )
   }
 
 }

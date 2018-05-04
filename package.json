@@ -1,6 +1,6 @@
 {
   "name": "react-tag-manager",
-  "version": "2.0.0-beta.6",
+  "version": "2.0.0-beta.7",
   "description": "Google Tag Manager for React",
   "keywords": [
     "analytics",
@@ -41,6 +41,7 @@
     "debug": "^3.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-helmet": "^5.2.0",
     "react-router": "^4.2.0"
   },
   "devDependencies": {
