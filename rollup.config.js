@@ -22,11 +22,12 @@ export default {
     babel({
       plugins: [
         'add-react-displayname',
+        '@babel/plugin-proposal-export-namespace-from',
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-object-rest-spread'
       ],
       presets: [
-        ['es2015-rollup'],
-        'react',
-        'stage-0',
+        '@babel/preset-react',
       ],
       exclude: 'node_modules/**',
       babelrc: false,

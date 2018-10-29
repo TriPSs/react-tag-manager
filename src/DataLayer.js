@@ -57,7 +57,7 @@ export class DataLayer extends React.Component {
         passProps,
         withGTM,
       },
-      ...rest,
+      ...rest
     } = this.props
 
     if (!passProps) {
