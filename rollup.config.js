@@ -1,6 +1,6 @@
 import path from 'path'
 import babel from 'rollup-plugin-babel'
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from 'rollup-plugin-node-resolve'
 
 export default {
   input   : path.resolve('src/index.js'),
@@ -24,7 +24,7 @@ export default {
         'add-react-displayname',
         '@babel/plugin-proposal-export-namespace-from',
         '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-object-rest-spread'
+        '@babel/plugin-proposal-object-rest-spread',
       ],
       presets: [
         '@babel/preset-react',
