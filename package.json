@@ -37,7 +37,7 @@
     "preversion": "npm run test",
     "postversion": "git push && git push --tags && npm publish"
   },
-  "dependencies": {
+  "peerDependencies": {
     "debug": "4.1.1",
     "prop-types": "15.7.2",
     "react": "16.8.4",
@@ -58,6 +58,7 @@
     "babel-plugin-remove-comments": "^2.0.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "cross-env": "^5.2.0",
+    "debug": "4.1.1",
     "eslint": "5.15.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-standard": "^12.0.0",
@@ -71,6 +72,10 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "24.5.0",
+    "prop-types": "15.7.2",
+    "react": "16.8.4",
+    "react-helmet": "^5.2.0",
+    "react-router": "5.0.0",
     "react-test-renderer": "16.8.4",
     "rollup": "1.7.0",
     "rollup-plugin-babel": "^4.3.2",
